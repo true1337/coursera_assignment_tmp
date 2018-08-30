@@ -1,10 +1,11 @@
 from django.shortcuts import render
-
-
-# Create your views here.
+from django.http import HttpResponse
 
 def echo(request):
-    pass
+    return render(request, 'echo.html', context={
+        'params':getattr(request, request.method),
+        'header':request.META.get('X-Print-Statement')
+    })
 
 
 def filters(request):

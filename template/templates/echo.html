@@ -1,0 +1,15 @@
+{% spaceless %}
+{% if params %}
+    {{request.method|lower}}
+{% endif %}
+
+{% for key, value in params.items %}
+    {{key}}: {{value}}
+{% endfor %}
+
+{% if header is None %}
+    statement is empty
+{% else %}
+    statement is {{header}}
+{% endif %}
+{% endspaceless %}
