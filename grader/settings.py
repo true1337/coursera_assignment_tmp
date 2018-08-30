@@ -25,7 +25,7 @@ SECRET_KEY = 'ysv*%sw3)%!&=htmrb#$d@thbv)chc0@-*^5*i)vo%!)l@$%^x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['testserver', '127.0.0.1']
 
 
 # Application definition
@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries': {'extras':'template.templatetags.extras'}
         },
     },
 ]
